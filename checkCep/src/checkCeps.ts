@@ -3,8 +3,8 @@ import { timeOut } from './config';
 import { fileMaker } from './filemaker';
 
 export interface ValidCep {
-  zipcode: string;
-  district: string;
+  cep: string;
+  bairro: string;
 }
 
 export async function checkCep(initial: number, finish: number) {
@@ -17,10 +17,11 @@ export async function checkCep(initial: number, finish: number) {
   await getCep(String(current))
     .then((data: any) => {
       root.innerHTML += `<div>Processado: ${current}</div>`;
+      window.scroll(0, 99999999);
 
       const newValidCep: ValidCep = {
-        zipcode: data.zipcode,
-        district: data.district,
+        cep: data.cep,
+        bairro: data.bairro,
       };
 
       items.push(newValidCep);
@@ -41,6 +42,7 @@ export async function checkCep(initial: number, finish: number) {
     })
     .catch(() => {
       root.innerHTML += `<div>Processado: ${current}</div>`;
+      window.scroll(0, 99999999);
 
       current++;
 

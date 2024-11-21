@@ -24,10 +24,11 @@ export async function checkCep(initial: number, finish: number) {
         bairro: data.neighborhood,
       };
 
-      console.log(newValidCep);
       items.push(newValidCep);
-      console.log(items);
+
       localStorage.setItem('validCeps', JSON.stringify(items));
+
+      fileMaker(items, `${Date.now()}.js`);
 
       current++;
 
@@ -36,10 +37,6 @@ export async function checkCep(initial: number, finish: number) {
           checkCep(Number(current), finish);
         }, timeOut);
       } else if (current === finish + 1) {
-        console.log('finalizado');
-
-        console.log(items);
-
         fileMaker(items, `${Date.now()}.js`);
       }
     })
@@ -54,10 +51,6 @@ export async function checkCep(initial: number, finish: number) {
           checkCep(Number(current), finish);
         }, timeOut);
       } else if (current === finish + 1) {
-        console.log('finalizado');
-
-        console.log(items);
-
         fileMaker(items, `${Date.now()}.js`);
       }
     });

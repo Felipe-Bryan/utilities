@@ -30,6 +30,6 @@ export function fileMaker(content: ValidCep[], fileName: string) {
 
 function contentConverter(content: ValidCep[]) {
   return `const validCeps = [
-    ${String(content)}
+  ${content.map((item) => `  ${JSON.stringify(item)}`).join(',\n')}
   ]`;
 }

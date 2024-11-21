@@ -10,7 +10,7 @@ export interface ValidCep {
 export async function checkCep(initial: number, finish: number) {
   let current = initial;
 
-  const items: ValidCep[] = [];
+  const items: ValidCep[] = JSON.parse(localStorage.getItem('validCeps') || '[]');
 
   const root = document.getElementById('root')!;
 
@@ -21,18 +21,21 @@ export async function checkCep(initial: number, finish: number) {
 
       const newValidCep: ValidCep = {
         cep: data.cep,
-        bairro: data.bairro,
+        bairro: data.neighborhood,
       };
 
+      console.log(newValidCep);
       items.push(newValidCep);
+      console.log(items);
+      localStorage.setItem('validCeps', JSON.stringify(items));
 
       current++;
 
-      if (current < finish) {
+      if (current <= finish) {
         setTimeout(() => {
           checkCep(Number(current), finish);
         }, timeOut);
-      } else if (current === finish) {
+      } else if (current === finish + 1) {
         console.log('finalizado');
 
         console.log(items);
@@ -46,14 +49,16 @@ export async function checkCep(initial: number, finish: number) {
 
       current++;
 
-      if (current < finish) {
+      if (current <= finish) {
         setTimeout(() => {
           checkCep(Number(current), finish);
         }, timeOut);
-      } else if (current === finish) {
+      } else if (current === finish + 1) {
         console.log('finalizado');
 
         console.log(items);
+
+        fileMaker(items, `${Date.now()}.js`);
       }
     });
 }

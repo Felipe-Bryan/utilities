@@ -1,0 +1,61 @@
+.custom-bg-nav {
+  background-color: rgb(252, 78, 15);
+}
+
+.store-name {
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+  font-style: italic;
+  -webkit-text-stroke: 1px #000;
+}
+
+.product-img {
+  width: 30%;
+}
+
+.categoryBtn {
+  color: white !important;
+  font-weight: 300;
+}
+
+.categoryBtn.active {
+  color: white !important;
+  font-weight: 600;
+  background-color: #ffffff00 !important;
+  text-decoration: underline;
+}
+
+.bottom-icon {
+  width: 33.33%;
+}
+
+@-webkit-keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-center {
+  -webkit-animation: rotate-center 1s ease-in-out 3s infinite both;
+  animation: rotate-center 1s ease-in-out 3s infinite both;
+}
+
+.loadingImg {
+  width: 90%;
+}

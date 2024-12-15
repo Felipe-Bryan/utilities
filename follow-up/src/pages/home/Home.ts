@@ -1,6 +1,6 @@
 import { Modal, modalFooter } from '../../components/Modal';
 import { Root } from '../../components/Root';
-import { modalAddGlicemia } from './components/modalAddGlicemia';
+import { modalGlicemia } from './components/modalGlicemia';
 import { renderGlicemias } from './functions/renderGlicemias';
 import { saveGlicemia } from './functions/saveGlicemia';
 import { setClicks } from './functions/setClicks';
@@ -40,7 +40,7 @@ export function startHome() {
         title: 'Adicionar Glicemia',
         id: 'modal',
         fullscreen: 'full',
-        content: modalAddGlicemia(),
+        content: modalGlicemia(),
         footer: modalFooter({
           btns: 2,
           btn1: {

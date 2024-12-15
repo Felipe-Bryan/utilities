@@ -2,7 +2,7 @@ import { Input } from '../../../components/Input';
 import { Glicemia } from '../../../types/Glicemia';
 import { dateStringtoInputValue } from '../../../utils/handleDate';
 
-export function modalAddGlicemia(glicemia?: Glicemia) {
+export function modalGlicemia(glicemia?: Glicemia) {
   let line = '';
 
   line += Input({
@@ -23,7 +23,7 @@ export function modalAddGlicemia(glicemia?: Glicemia) {
 
   line += Input({
     id: 'v2Ipt',
-    title: 'V2',
+    title: 'Primeiro',
     type: 'number',
     groupAdditionalClass: 'mb-2',
     value: glicemia ? glicemia.v2 : '',
@@ -31,7 +31,7 @@ export function modalAddGlicemia(glicemia?: Glicemia) {
 
   line += Input({
     id: 'v3Ipt',
-    title: 'V3',
+    title: 'Segundo',
     type: 'number',
     groupAdditionalClass: 'mb-2',
     value: glicemia ? glicemia.v3 : '',
@@ -39,7 +39,7 @@ export function modalAddGlicemia(glicemia?: Glicemia) {
 
   line += Input({
     id: 'v4Ipt',
-    title: 'V4',
+    title: 'Terceiro',
     type: 'number',
     groupAdditionalClass: 'mb-2',
     value: glicemia ? glicemia.v4 : '',

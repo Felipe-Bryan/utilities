@@ -48,3 +48,7 @@ export function dateStringtoInputValue() {
 export function convertInputValue(value: string) {
   return `${value[8]}${value[9]}/${value[5]}${value[6]}/${value[0]}${value[1]}${value[2]}${value[3]}`;
 }
+
+export function dateToNumber(value: string) {
+  return Number(value.replace('-', '').replace('-', ''));
+}

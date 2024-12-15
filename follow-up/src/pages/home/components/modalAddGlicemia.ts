@@ -9,40 +9,40 @@ export function modalAddGlicemia(glicemia?: Glicemia) {
     id: 'data',
     title: 'Data',
     type: 'date',
-    value: glicemia?.data || dateStringtoInputValue(),
-    additionalClass: 'mb-2',
+    value: glicemia ? glicemia.data : dateStringtoInputValue(),
+    groupAdditionalClass: 'mb-2',
   });
 
   line += Input({
-    id: 'v1',
+    id: 'v1Ipt',
     title: 'Jejum',
     type: 'number',
-    additionalClass: 'mb-2',
-    value: glicemia?.v1 || '',
+    groupAdditionalClass: 'mb-2',
+    value: glicemia ? glicemia.v1 : '',
   });
 
   line += Input({
-    id: 'v2',
+    id: 'v2Ipt',
     title: 'V2',
     type: 'number',
-    additionalClass: 'mb-2',
-    value: glicemia?.v2 || '',
+    groupAdditionalClass: 'mb-2',
+    value: glicemia ? glicemia.v2 : '',
   });
 
   line += Input({
-    id: 'v3',
+    id: 'v3Ipt',
     title: 'V3',
     type: 'number',
-    additionalClass: 'mb-2',
-    value: glicemia?.v3 || '',
+    groupAdditionalClass: 'mb-2',
+    value: glicemia ? glicemia.v3 : '',
   });
 
   line += Input({
-    id: 'v4',
+    id: 'v4Ipt',
     title: 'V4',
     type: 'number',
-    additionalClass: 'mb-2',
-    value: glicemia?.v4 || '',
+    groupAdditionalClass: 'mb-2',
+    value: glicemia ? glicemia.v4 : '',
   });
 
   return line;

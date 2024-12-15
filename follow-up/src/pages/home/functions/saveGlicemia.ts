@@ -6,13 +6,14 @@ import { invalidateInput } from '../../../utils/invalidateInput';
 export function saveGlicemia() {
   const saved: Glicemia[] = getStorageData('glicemias') || [];
 
-  const dataIpt = <HTMLInputElement>document.getElementById('data');
-  const v1Ipt = <HTMLInputElement>document.getElementById('v1');
-  const v2Ipt = <HTMLInputElement>document.getElementById('v2');
-  const v3Ipt = <HTMLInputElement>document.getElementById('v3');
-  const v4Ipt = <HTMLInputElement>document.getElementById('v4');
+  const dataIpt = <HTMLInputElement>document.getElementById('data')!;
+  const v1Ipt = <HTMLInputElement>document.getElementById('v1Ipt')!;
+  const v2Ipt = <HTMLInputElement>document.getElementById('v2Ipt')!;
+  const v3Ipt = <HTMLInputElement>document.getElementById('v3Ipt')!;
+  const v4Ipt = <HTMLInputElement>document.getElementById('v4Ipt')!;
 
-  if (v1Ipt.value === '') {
+  if (v1Ipt.value === undefined || v1Ipt.value === '') {
+    console.log(v1Ipt);
     alert('Informe um valor inicial!');
 
     invalidateInput(v1Ipt);

@@ -3,7 +3,7 @@ import { Root } from '../../components/Root';
 import { modalAddGlicemia } from './components/modalAddGlicemia';
 import { renderGlicemias } from './functions/renderGlicemias';
 import { saveGlicemia } from './functions/saveGlicemia';
-import { setClicks } from './functions/setGlicemiaClicks';
+import { setClicks } from './functions/setClicks';
 
 export function startHome() {
   Root.innerHTML = `

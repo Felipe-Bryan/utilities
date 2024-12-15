@@ -5,11 +5,12 @@ export interface InputProps {
   placeholder?: string;
   value?: string;
   additionalClass?: string;
+  groupAdditionalClass?: string;
 }
 
 export function Input(props: InputProps) {
   return `
-<div class="input-group">
+<div class="input-group${props.groupAdditionalClass ? ` ${props.groupAdditionalClass}` : ''}">
   <span class="input-group-text w-25" id="basic-addon1">${props.title}</span>
   <input 
     type="${props.type}" 

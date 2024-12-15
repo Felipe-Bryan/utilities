@@ -17,14 +17,14 @@ export function glicemiaRow(item: Glicemia) {
   <div class="row border-top border-bottom">
     <div class="fw-bold fst-italic col-5 p-0 ps-2">Jejum</div>
     <div class="col-1 p-0" id="v1">${v1}</div>
-    <div class="fw-bold fst-italic col-5 p-0">Primeira medição</div>
+    <div class="fw-bold fst-italic col-5 p-0">2h após café</div>
     <div class="col-1 p-0" id="v2">${v2}</div>
   </div>
 
   <div class="row border-bottom border-dark">
-    <div class="fw-bold fst-italic col-5 p-0 ps-2">segunda medição</div>
+    <div class="fw-bold fst-italic col-5 p-0 ps-2">2h após almoço</div>
     <div class="col-1 p-0" id="v3">${v3}</div>
-    <div class="fw-bold fst-italic col-5 p-0">terceira medição</div>
+    <div class="fw-bold fst-italic col-5 p-0">2h após jantar</div>
     <div class="col-1 p-0" id="v4">${v4}</div>
   </div>
 </div>`;

@@ -1,15 +1,18 @@
 import { Modal, modalFooter } from '../../components/Modal';
 import { Root } from '../../components/Root';
 import { modalGlicemia } from './components/modalGlicemia';
+import { modalPressao } from './components/modalPressao';
 import { renderGlicemias } from './functions/renderGlicemias';
+import { renderPas } from './functions/renderPas';
 import { saveGlicemia } from './functions/saveGlicemia';
+import { savePressao } from './functions/savePressao';
 import { setClicks } from './functions/setClicks';
 
 export function startHome() {
   Root.innerHTML = `
 <div class="display-6 text-center py-2 border-bottom mb-2">Acompanhamento</div>
 
-<div class="mb-2 sticky-top">
+<div class="mb-2 sticky-top bg-light">
   <ul class="nav nav-tabs nav-justified">
     <li class="nav-item">
       <a class="nav-link active" aria-current="page" id="glicemia">Glicemia</a>
@@ -26,7 +29,7 @@ export function startHome() {
 
   const content = document.getElementById('content')!;
 
-  let active: string = 'glicemia';
+  let active: 'glicemia' | 'pa' = 'glicemia';
 
   content.innerHTML = renderGlicemias();
 
@@ -67,7 +70,7 @@ export function startHome() {
         title: 'Adicionar Pressão',
         id: 'modal',
         fullscreen: 'full',
-        content: ``, // componente modal
+        content: modalPressao(),
         footer: modalFooter({
           btns: 2,
           btn1: {
@@ -87,7 +90,7 @@ export function startHome() {
       const btnSave = document.getElementById('save')!;
 
       btnSave.addEventListener('click', () => {
-        console.log(); // salvar PA
+        savePressao();
       });
     }
   });
@@ -96,7 +99,7 @@ export function startHome() {
 
   navItems.forEach((btn) => {
     btn.addEventListener('click', () => {
-      active = btn.id;
+      active = btn.id as 'glicemia' | 'pa';
 
       navItems.forEach((item) => {
         item.classList.remove('active');
@@ -104,14 +107,12 @@ export function startHome() {
 
       btn.classList.add('active');
 
-      console.log(active);
-
       if (active === 'glicemia') {
         content.innerHTML = renderGlicemias();
 
         setClicks(active);
       } else {
-        content.innerHTML = ''; // render PA items
+        content.innerHTML = renderPas();
 
         setClicks(active);
       }

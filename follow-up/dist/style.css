@@ -2,6 +2,12 @@ i:hover {
   cursor: pointer;
 }
 
+#btnAdd {
+  position: fixed;
+  bottom: 3%;
+  right: 3%;
+}
+
 /* body {
   min-height: 100vh;
 }

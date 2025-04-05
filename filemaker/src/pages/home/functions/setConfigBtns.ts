@@ -1,4 +1,5 @@
 import { Modal, modalFooter } from '../../../components/base-components/Modal';
+import { entityConfigModal } from '../components/entityConfigModal';
 
 export function setConfigBtns() {
   const toConfig: string[] = ['Entity', 'Model', 'Controller', 'Repository', 'Routes'];
@@ -13,7 +14,7 @@ export function setConfigBtns() {
         let content: string = '';
 
         if (toConfig[i] === 'Entity') {
-          content = 'Entity Component';
+          content = entityConfigModal();
         } else if (toConfig[i] === 'Model') {
           content = 'Model Component';
         } else if (toConfig[i] === 'Controller') {

@@ -1,4 +1,5 @@
 import { Button } from '../../../components/base-components/Button';
+import { Checkbox } from '../../../components/base-components/Checkbox';
 import { featureNameIpt } from './featureNameIpt';
 import { propertyRow } from './propertyRow';
 
@@ -9,6 +10,25 @@ export function HomeComponent() {
     </div>`;
 
   line += featureNameIpt();
+
+  line += `<div class="row mb-1">`;
+
+  line += Checkbox({
+    label: 'Auto generated ID',
+    id: 'generatedIdIpt',
+    value: 'true',
+  });
+
+  line += `</div>`;
+
+  line += `<div class="row mb-2">`;
+
+  line += Button({
+    label: 'Gerar arquivos',
+    id: 'generateFiles',
+    color: 'success',
+  });
+  line += `</div>`;
 
   line += `<div class="row d-flex justify-content-around mb-2">
     <div class="col text-center fw-bold fs-5">Propriedades</div>
